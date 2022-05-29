@@ -146,11 +146,9 @@ void loop() {
   }
 
   if (client.connected()) {
-    String data = "Dust density: " ;
-    data += dustSensor.getDustDensity();
-    data += " ug/m3; Running average: ";
+    String data = String(dustSensor.getDustDensity());
+    data += ";";
     data += dustSensor.getRunningAverage();
-    data += " ug/m3";
     client.println(data);    
   }
   else {
